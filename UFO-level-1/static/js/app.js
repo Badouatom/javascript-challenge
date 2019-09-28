@@ -19,7 +19,7 @@ tdata.forEach(function(dataReport) {
   });
 });
 
-// ********************************************************
+// filter by datetime
 
 var submit = d3.select("#filter-btn");
 var empty = d3.select("tbody")
@@ -27,18 +27,18 @@ submit.on("click", function() {
     empty.html("")
     d3.event.preventDefault();
 	
-// the Element in put is the datatim	
+// the input Element  is the datatime	
     var inputElement = d3.select("#datetime");
     var inputValue = inputElement.property("value");
 
     console.log(inputValue);
     console.log(tdata);
 
-    var filteredData = tdata.filter(bydate => bydate.datetime === inputValue);
+    var filtereddata = tdata.filter(date => date.datetime === inputValue);
 
-    console.log(filteredData);
+    console.log(filtereddata);
 
-    filteredData.forEach(function(filteredReport) {
+    filtereddata.forEach(function(filteredReport) {
         console.log(filteredReport);
         var row = tbody.append("tr");
     
